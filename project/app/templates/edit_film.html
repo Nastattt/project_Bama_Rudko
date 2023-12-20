@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add film</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+    <h1>Редактирование фильма</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Сохранить</button>
+    </form>
+    <br>
+    <a href="{% url 'all-films' %}">Вернуться на главную</a>
+{% endblock %}
+</body>
+</html>

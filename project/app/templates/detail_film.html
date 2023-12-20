@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add film</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+    <h1>Подробнее о фильме: {{ film.title }}</h1>
+    <ul>
+        <li>Жанр: {{ film.genre }}</li>
+        <li>Дата выпуска: {{ film.release_date }}</li>
+        <li>Дата показа: {{ film.show_date }}</li>
+        <li>Актеры: {{ film.actors }}</li>
+    </ul>
+{% endblock %}
+</body>
+</html>

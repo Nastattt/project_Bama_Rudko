@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Афиша</title>
+     <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+    <h1>Все фильмы</h1>
+    {% for film in films %}
+        <h3>{{ film.title }}</h3>
+        <ul>
+            <li>Жанр: {{ film.genre }}</li>
+            <li>Дата выпуска: {{ film.release_date }}</li>
+            <li>Дата показа: {{ film.show_date }}</li>
+            <li>Актеры: {{ film.actors }}</li>
+        </ul>
+        <a href="{% url 'edit-film' pk=film.pk %}">Отредактировать</a>
+        <a href="{% url 'delete-film' pk=film.pk %}">Удалить</a>
+
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add film</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+{% extends "base.html" %}
+{% block content %}
+    <h1>Удалить фильм</h1>
+    <p>Are you sure you want to delete "{{ film.title }}"?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Да, удалить</button>
+    </form>
+    <a href="{% url 'all-films' %}">Отменить</a>
+{% endblock %}
+</body>
+</html>
